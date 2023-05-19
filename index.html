@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script defer src="/script.js"></script>
+    <title>ESPtrainer</title>
+  </head>
+  <body>
+    <header>
+      <!-- container for heading -->
+      <div class="heading">
+        <h1>Psychic Intuition Trainer</h1>
+        <h2>Tap the correct square.</h2>
+      </div>
+      <!-- container for correct answers -->
+      <div class="correctContainer">
+        <div class="correctTextBox">
+          <p class="correctText">CORRECT:</p>
+          <p class="correctScore">0</p>
+          <p class="possibleScore">/ 24</p>
+        </div>
+        <!-- container for correct progress -->
+        <div id="progressBar">
+          <div class="progressBarFull"></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- answer squares container-->
+      <div id="answerButtonContainer">
+        <div id="answerButtons" class="btnGrid">
+          <!-- squares -->
+          <button class="btn correct btnOne"></button>
+          <button class="btn btnTwo"></button>
+          <button class="btn btnThree"></button>
+          <button class="btn btnFour"></button>
+        </div>
+      </div>
+    </main>
+    <!-- bottom footer with controls -->
+    <footer>
+      <div class="trialContainer">
+        <p class="trialText">TRIALS LEFT:</p>
+        <p class="trialNumber">24</p>
+      </div>
+      <!-- controls container -->
+      <div id="controls">
+        <!-- reset button -->
+        <button id="resetButton" class="resetButton controlButton">
+          RESET
+        </button>
+        <!-- pass button -->
+        <button id="passButton" class="passButton controlButton">PASS</button>
+      </div>
+    </footer>
+  </body>
+</html>

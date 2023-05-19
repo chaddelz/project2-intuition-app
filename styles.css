@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  --main-color: #181818;
+  --secondary-color: rgb(216, 216, 216);
+  --tertiary-color: rgb(217, 163, 224);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* layout */
+
+header {
+  background-color: var(--main-color);
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  border-bottom: 6px solid var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* where the blocks are */
+main {
+  height: 60vh;
+  width: 100vw;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer {
+  background-color: var(--main-color);
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  border-top: 6px solid var(--tertiary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* header Styling*/
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-right: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+/* progress bar styling */
+
+.correctContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+}
+
+#progressBar {
+  width: 70vw;
+  height: 2rem;
+  border: 0.3rem solid var(--secondary-color);
+  border-radius: 10px;
+}
+
+.progressBarFull {
+  height: 1.6rem;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  width: 0;
+}
+
+/* Correct Choices Text */
+
+.correctTextBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.correctText {
+  color: var(--secondary-color);
+  margin-right: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.correctScore,
+.possibleScore {
+  margin-left: 5px;
+  color: var(--tertiary-color);
+  font-size: 1.3rem;
+}
+
+/* Answer buttons (Squares Styling) */
+
+.answerButtonContainer {
+  margin: auto auto;
+}
+
+.btnGrid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+  margin: 5px 5px;
+}
+
+.btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 0 1px 5px 1px;
+}
+
+.btn:hover {
+  scale: 1.01;
+}
+
+.btnOne {
+  background-color: rgb(67, 165, 67);
+}
+
+.btnTwo {
+  background-color: rgb(231, 229, 74);
+}
+
+.btnThree {
+  background-color: rgb(196, 65, 48);
+}
+
+.btnFour {
+  background-color: rgb(60, 138, 202);
+}
+
+/* styling for the correct block to be shown if your choice is wrong */
+.btn.correct {
+  scale: 1.1;
+  background-color: var(--tertiary-color);
+  transition: 0.15s;
+}
+
+/* Footer Buttons For Resetting or Passing */
+
+/* container */
+
+.trialContainer {
+  position: relative;
+  top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* trial text */
+
+.trialText,
+.trialNumber {
+  font-size: 1.6rem;
+  margin-right: 5px;
+  color: var(--secondary-color);
+}
+
+.trialNumber {
+  color: var(--tertiary-color);
+}
+
+/* controls for actually resetting and passing*/
+
+.controlButton {
+  display: inline-block;
+  margin: 5px 5px;
+
+  width: 100px;
+  height: 35px;
+  outline: none;
+
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+
+.resetButton {
+  border-radius: 15px 0 0 15px;
+}
+
+.passButton {
+  border-radius: 0 15px 15px 0;
+}
+
+.controlButton:hover {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+}
+
+.controlButton:active {
+  scale: 1.1;
+}
+
+@media (max-width: 480px) {
+  /* header */
+
+  .heading {
+    flex-direction: column;
+  }
+}

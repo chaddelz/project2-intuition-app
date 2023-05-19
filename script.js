@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // declaring variables
 
@@ -10,14 +10,14 @@ let correctBlock;
 
 // grabbing elements
 
-let greenBlock = document.querySelector('.btnOne');
-let yellowBlock = document.querySelector('.btnTwo');
-let redBlock = document.querySelector('.btnThree');
-let blueBlock = document.querySelector('.btnFour');
+let greenBlock = document.querySelector(".btnOne");
+let yellowBlock = document.querySelector(".btnTwo");
+let redBlock = document.querySelector(".btnThree");
+let blueBlock = document.querySelector(".btnFour");
 
-const progressBarFull = document.querySelector('.progressBarFull');
-const resetButton = document.getElementById('resetButton');
-const passButton = document.getElementById('passButton');
+const progressBarFull = document.querySelector(".progressBarFull");
+const resetButton = document.getElementById("resetButton");
+const passButton = document.getElementById("passButton");
 
 // randomizing the number to begin a trial
 
@@ -50,18 +50,18 @@ const randomizeNumber = () => {
   }
 
   // resetting background
-  document.querySelector('body').style.backgroundColor = '#F7F5EB';
+  document.querySelector("body").style.backgroundColor = "#F7F5EB";
 };
 
 // initializing the game
 randomizeNumber();
 
 // grabbing the answer buttons
-let answerButtons = document.querySelectorAll('.btn');
+let answerButtons = document.querySelectorAll(".btn");
 
 answerButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    console.log('hello choice below');
+  button.addEventListener("click", () => {
+    console.log("hello choice below");
 
     // getting the value of the guess
     let choice = Number(button.value);
@@ -72,17 +72,17 @@ answerButtons.forEach((button) => {
       // if the choice is correct
       if (choice === blockNumber) {
         // changes body background to green indicating correct
-        document.querySelector('body').style.backgroundColor = '#408145';
+        document.querySelector("body").style.backgroundColor = "#408145";
 
         // increasing score
         ++correctCount;
-        document.querySelector('.correctScore').textContent = correctCount;
+        document.querySelector(".correctScore").textContent = correctCount;
 
         // decreasing remaining trials
         --trials;
 
         // updating trial and score count
-        document.querySelector('.trialNumber').textContent = trials;
+        document.querySelector(".trialNumber").textContent = trials;
 
         // update progress bar
         progressBarFull.style.width = `${(correctCount / 24) * 100}%`;
@@ -96,16 +96,16 @@ answerButtons.forEach((button) => {
         --trials;
 
         // updating trial and score count
-        document.querySelector('.trialNumber').textContent = trials;
+        document.querySelector(".trialNumber").textContent = trials;
 
         // changes body background to red indicating incorrect
-        document.querySelector('body').style.backgroundColor = '#771e1e';
+        document.querySelector("body").style.backgroundColor = "#771e1e";
 
         // applying 'correct' to the correct block
-        correctBlock.textContent = 'correct block';
+        correctBlock.textContent = "correct block";
 
-        // adding the correct class to the button
-        correctBlock.classList.add('correct');
+        // adding the correct class to the square
+        correctBlock.classList.add("correct");
 
         // clearing the 'correct' text before resetting the correctBlock
         setTimeout(clearText, 500);
@@ -114,24 +114,27 @@ answerButtons.forEach((button) => {
         setTimeout(randomizeNumber, 501);
       }
     } else {
-      document.querySelector('.trialNumber').textContent =
-        '0 = Trial Over, Press Reset';
+      document.querySelector(".trialNumber").textContent =
+        "0 = Trial Over, Press Reset";
     }
   });
 });
 
 // to clear 'correct' text from correctBlock for setTimeout callback
 const clearText = () => {
-  correctBlock.textContent = '';
-  correctBlock.classList.remove('correct');
+  correctBlock.textContent = "";
+  correctBlock.classList.remove("correct");
 };
 
 // pass button
-passButton.addEventListener('click', () => {
-  console.log('pass pressed');
+passButton.addEventListener("click", () => {
+  console.log("pass pressed");
 
   // applying 'correct' to the correct block
-  correctBlock.textContent = 'correct block';
+  correctBlock.textContent = "correct block";
+
+  // adding the correct class to the button
+  correctBlock.classList.add("correct");
 
   // resetting the 'correct' text
   setTimeout(clearText, 500);
@@ -141,16 +144,16 @@ passButton.addEventListener('click', () => {
 });
 
 // reset button
-resetButton.addEventListener('click', () => {
-  console.log('reset pressed');
+resetButton.addEventListener("click", () => {
+  console.log("reset pressed");
 
   //   resetting trials and correctCount
   trials = 24;
   correctCount = 0;
 
   //   updating trials and correct number
-  document.querySelector('.trialNumber').textContent = trials;
-  document.querySelector('.correctScore').textContent = correctCount;
+  document.querySelector(".trialNumber").textContent = trials;
+  document.querySelector(".correctScore").textContent = correctCount;
 
   //   resetting progress bar
   progressBarFull.style.width = 0;
